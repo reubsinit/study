@@ -802,7 +802,7 @@ setTimeout(function() { console.log(giveHiSometimes()); }, 8000); // -> 'hi'
   ```
   Now the inner function gets its `this` set by where it was saved - it's a lexically scoped `this`
 
-### `new` Keyword
+#### `new` Keyword
 ```js
   function userCreator(name) {
     this.name = name;
@@ -827,3 +827,20 @@ setTimeout(function() { console.log(giveHiSometimes()); }, 8000); // -> 'hi'
         - The remainder of the function's statements are executed and at the end of the function, the `this` object is returned
     - `user1` is an object with a property `__proto__`, which references the `prototype` property on the instantiating function's object
     - Calling `user1.increment()` will cause the JavaScript interpretor to check `user1` for the method `increment`, which is doesn't find, it then follows the prototype chain up through the reference of `__proto__` to find the function.
+
+#### `class` Keyword
+```js
+  class UserCreator {
+    constructor(name) {
+      this.name = name;
+      this.score = 0;
+    }
+
+    increment() {
+      this.score++;
+    }
+  }
+
+  let user1 = new userCreator('Reuben');
+```
+- The `class` keyword is purely syntactic sugar and under the hood, this implementation behaves in exactly the same manner as the previous, though this time, we get to declare the functions all within the same block rather than specifying them as properties on `prototype` - `userCreator.prototype.increment ...`
