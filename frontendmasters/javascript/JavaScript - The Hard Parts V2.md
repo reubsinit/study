@@ -816,7 +816,7 @@ setTimeout(function() { console.log(giveHiSometimes()); }, 8000); // -> 'hi'
   let user1 = new userCreator('Reuben');
 ```
 - All of the previous examples can be simplified by using the `new` keyword. When you use `new` in front of the `userCreator` function, the function has an implicit variable, or object, inside called `this`.
-- Every function is really just an object and every function created with the `function` keyword has a prototype property attached to it, which is an object. So in the above example, we can use the prototype property of the `userCreator` function to store shared functionality between all instances created by calling `new userCreator`. Note the each isntnance created has a `__proto__` property on in, which refers to the `prototype` on `userCreator`
+- Every function is really just an object and every function created with the `function` keyword has a prototype property attached to it, which is an object. So in the above example, we can use the prototype property of the `userCreator` function to store shared functionality between all instances created by calling `new userCreator`. Note that each instance created has a `__proto__` property on in, which refers to the `prototype` on `userCreator`
 - ![Diagram](./2.jpg)
     - The first thing that happens is we create a function with the label `userCreator` - using the `function` keyword, this results in the function + object combination, where the object has a property on it called `prototype`, which is also an object
     - The next thing that happens is that on the `userCreator` function's object `prototype`, a method is defined on the property `increment`
