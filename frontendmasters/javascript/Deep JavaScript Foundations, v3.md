@@ -597,3 +597,6 @@ let workshop = {
 
 workshop.ask('lmofl');
 ```
+
+#### Prototypes
+- A constructor call makes an object linked to its own prototype
